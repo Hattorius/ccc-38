@@ -29,7 +29,7 @@ When I was done I had 15 minutes left on the clock
 Level 6 is basically level 5 but harder. In level 6 they actually required you to take the most efficient way. As soon as I read this, I just copied my code from level 5 to level 6 and tried it out: all execrises had a green checkmark! ✅
 
 ## Level 7
-The last level (which only 1 participant could finish) I didn't even try. I looked at the clock saw that I had 12 minutes left. I read the assignment: level 6 but the boat, the path, can't circle around any other islands. I know it's possible to create it, and I could've probably done it too. But time was up, and honestly... it's currently almost 3 am and I'm tired!
+The last level I saw (which only 1 participant could finish) I didn't even try. I looked at the clock saw that I had 12 minutes left. I read the assignment: level 6 but the boat, the path, can't circle around any other islands. I know it's possible to create it, and I could've probably done it too. But time was up, and honestly... it's currently almost 3 am and I'm tired!
 
 Thank you Cloudflight team for a lot of fun. Was a real challenge!
 
