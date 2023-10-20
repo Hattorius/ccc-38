@@ -1,0 +1,76 @@
+64
+K,H,K,H
+H,H,K,H
+K,K,H,K
+K,K,H,K
+H,H,K,H
+K,K,H,K
+H,H,K,K
+K,K,H,H
+K,K,K,K
+H,H,H,H
+K,H,K,K
+H,K,H,K
+H,K,K,H
+H,H,H,K
+H,H,H,K
+K,K,H,H
+K,K,K,K
+K,H,H,H
+K,K,H,H
+K,H,K,H
+H,H,H,H
+H,H,H,H
+K,K,H,H
+K,H,K,H
+H,H,K,K
+K,K,K,K
+H,H,K,H
+H,H,K,H
+K,K,K,H
+H,K,H,K
+K,H,K,H
+K,K,H,K
+H,K,K,H
+H,H,K,K
+H,H,H,K
+K,K,K,K
+H,K,K,K
+H,H,H,H
+H,K,K,H
+H,H,H,H
+K,K,K,K
+K,H,K,K
+H,H,H,K
+H,H,H,K
+H,H,K,K
+H,K,K,H
+K,H,H,H
+K,H,H,K
+H,H,K,K
+K,K,K,H
+H,H,H,K
+H,K,H,H
+K,H,H,K
+H,H,H,K
+H,H,H,H
+H,K,H,H
+K,K,K,K
+K,H,K,K
+H,H,H,K
+K,H,K,H
+H,H,K,H
+K,K,K,H
+K,H,H,K
+K,K,H,K
+10
+E,K,K,E E,H,H,H E,H,H,K E,H,K,K E,K,K,K E,K,K,H E,K,K,H E,K,K,H E,H,K,H E,E,H,K
+H,H,H,E                                                                 K,E,H,K
+K,H,K,E                                                                 K,E,H,K
+H,K,K,E                                                                 K,E,K,K
+H,K,K,E                                                                 H,E,K,H
+H,K,K,E                                                                 H,E,H,H
+H,H,K,E                                                                 K,E,K,H
+H,H,K,E                                                                 H,E,H,K
+H,K,K,E                                                                 K,E,K,K
+H,K,E,E K,H,E,H H,H,E,K K,H,E,K K,K,E,K K,H,E,H H,K,E,K K,K,E,H K,K,E,H H,E,E,H

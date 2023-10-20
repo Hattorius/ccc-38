@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Puzzle Visualizer</title>
+</head>
+<body>
+    <div class="input-region">
+        <div class="discription">
+            <div class="description-text">
+                <h1>Puzzle Visualizer</h1>
+                <p>
+                    Paste your puzzle in the box below to get a graphical representation.<br/>
+                    <strong>Disclaimer:</strong>
+                    This visualizer does not validate if your puzzle is correct or incorrect.<br/>
+                    This visualizer was written in JavaScript. Feel free to adapt it however you see fit.
+                </p>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="39 48 384 284" width="200" class="codinator">
+                <polygon fill="#fddd00" points="
+                    59.65 53.93 52.5 53.93 52.5 61.08 59.65 61.08 66.8 61.08 66.8 53.93 59.65 53.93
+                "/>
+                <polygon fill="#fddd00" points="
+                    173.98 311.18 173.98 318.33 181.13 318.33
+                    181.13 311.18 181.13 304.04 181.13 296.89
+                    173.98 296.89 173.98 304.04 173.98 311.18
+                "/>
+                <rect fill="#fddd00" x="181.13" y="318.33" width="7.15" height="7.15"/>
+                <polygon fill="#fddd00" points="
+                    409.79 61.08 409.79 53.93 402.65 53.93 395.5 53.93 395.5 61.08 402.65 61.08 409.79 61.08
+                "/>
+                <path fill="#fddd00" d="
+                    m409.79,103.95v-14.29h-7.15v-14.29h-7.15v-14.29h-7.15v7.15h-7.15v14.29h7.15v7.15h7.15v14.29h7.15
+                    v21.44h-7.15v7.15h-7.15v7.15h-71.46v7.15h-21.44v7.15h-14.29v7.15h-7.15v-7.15h-14.29v-7.15h-57.17
+                    v7.15h-14.29v7.15h-7.15v-7.15h-14.29v-7.15h-21.44v-7.15h-71.46v-7.15h-7.15v-7.15h-7.15v-21.44h7.15
+                    v-14.29h7.15v-7.15h7.15v-14.29h-7.15v-7.15h-7.15v14.29h-7.15v14.29h-7.15v14.29h-7.15v42.87h7.15
+                    v7.15h7.15v7.15h35.73v7.15h35.73v7.15h7.15v7.15h7.15v28.58h7.15v7.15h7.15v42.87h7.15v35.73h7.15
+                    v-7.15h7.15v-7.15h28.58v-7.15h14.29v-7.15h14.29v7.15h14.29v7.15h28.58v7.15h7.15v7.15h7.15
+                    v-35.73h7.15v-42.87h7.15v-7.15h7.15v-28.58h7.15v-7.15h7.15v-7.15h35.73v-7.15h35.73v-7.15h7.15
+                    v-7.15h7.15v-42.87h-7.15Zm-128.62,128.62v14.29h-7.15v7.15h-28.58v-14.29h14.29v-7.15h14.29
+                    v-7.15h7.15v7.15Zm-71.46,21.44h-21.44v-7.15h-7.15v-21.44h7.15v7.15h14.29v7.15h14.29v14.29h-7.15Z
+                "/>
+                <polygon fill="#fddd00" points="
+                     281.17 304.04 281.17 311.18 281.17 318.33
+                     288.32 318.33 288.32 311.18 288.32 304.04
+                     288.32 296.89 281.17 296.89 281.17 304.04
+                "/>
+                <rect fill="#fddd00" x="274.02" y="318.33" width="7.15" height="7.15"/>
+            </svg>
+        </div>
+        <textarea id="inputBox" rows="15" cols="108">
+E,K,H,E E,K,H,H E,K,H,H E,K,H,H E,E,H,K
+K,H,K,E K,H,H,K K,K,H,K H,K,K,H K,E,H,H
+H,K,H,E K,K,H,H K,K,K,K H,K,H,H K,E,H,H
+K,K,H,E H,K,H,H H,K,K,H K,K,K,K K,E,K,H
+K,H,E,E K,K,E,K H,K,E,H H,H,E,H K,E,E,K</textarea>
+    </div>
+    <div id="outputBox">
+        <svg xmlns="http://www.w3.org/2000/svg" width="560" height="560"></svg>
+    </div>
+</body>
+<style>
+    html {
+        color-scheme: dark;
+        background: black;
+        font-family: Arial, serif;
+    }
+
+    .input-region {
+        padding: 2rem 2.5rem
+    }
+
+    .discription {
+        width: 800px;
+        display: flex;
+    }
+
+    .description-text {
+        flex: 1;
+    }
+
+    .codinator {
+        margin-top: -2.5rem;
+    }
+
+    h1 {
+        color: #fddd00;
+        margin: 0 0 1.5rem 0;
+    }
+
+    p {
+        margin: 0 0 2rem 0;
+    }
+
+    textarea {
+        background: black;
+        outline: white solid 2px;
+        border-radius: 5px;
+        padding: 1rem;
+    }
+</style>
+<script>
+    const inputBox = document.getElementById('inputBox');
+    const outputBox = document.getElementById('outputBox');
+    outputBox.replaceChildren(createPuzzleSVG(inputBox.value));
+    inputBox.addEventListener('input', () =>
+        outputBox.replaceChildren(createPuzzleSVG(inputBox.value))
+    );
+
+    function createPuzzleSVG(inputText) {
+        const pieces = inputText.split(/\n/)
+            .filter(line => line.length > 0 && !/^\d+$/.test(line))
+            .map(line => line.split(/\s/)
+                .filter(piece => piece.length > 0)
+                .map(piece => piece.split(/,/))
+            );
+        let Y = pieces.length;
+        let X = pieces.length === 0 ? 0 : Math.max(...pieces.map(line => line.length));
+
+        const svg = createSvgElement('svg', {
+            width: X * 50 + 60,
+            height: Y * 50 + 60,
+        });
+
+        for (let iX = 0; iX < X; iX++) {
+            const textElement = createSvgElement('text', {
+                x: iX * 50 + 65,
+                y: 30,
+                textAnchor: 'middle',
+                fontFamily: 'sans-serif',
+                fill: 'white',
+            });
+            textElement.textContent = iX;
+
+            svg.appendChild(textElement);
+        }
+
+        for (let iY = 0; iY < Y; iY++) {
+            const textElement = createSvgElement('text', {
+                x: 25,
+                y: iY * 50 + 70,
+                textAnchor: 'middle',
+                fontFamily: 'sans-serif',
+                fill: 'white',
+            });
+            textElement.textContent = iY;
+
+            svg.appendChild(textElement);
+        }
+
+        const ak1 = 'A 3.4 3.4 0 0 0 ';
+        const ak2 = 'A 7.4 7.4 0 1 1 ';
+        const ah1 = 'A 1.7 1.7 0 0 1 ';
+        const ah2 = 'A 9.4 9.4 0 1 0 ';
+
+        for (let iY = 0; iY < pieces.length; iY++) {
+            for (let iX = 0; iX < pieces[iY].length; iX++) {
+                const piece = pieces[iY][iX];
+
+                let pathString = 'M 0 0 ';
+
+                if (piece[0] && piece[0].startsWith('K')) {
+                    pathString += 'L 15 0 ' + ak1 + '17.7 -5.7 ' + ak2 + '30.3 -5.7 ' + ak1 + '33 0 '
+                }
+                if (piece[0] && piece[0].startsWith('H')) {
+                    pathString += 'L 15 0 ' + ah1 + '16 2.7 ' + ah2 + '32 2.7 ' + ah1 + '33 0 '
+                }
+                pathString += 'L 48 0 ';
+
+                if (piece[1] && piece[1].startsWith('K')) {
+                    pathString += 'L 48 15 ' + ak1 + '53.7 17.7 ' + ak2 + '53.7 30.3 ' + ak1 + '48 33 '
+                }
+                if (piece[1] && piece[1].startsWith('H')) {
+                    pathString += 'L 48 15 ' + ah1 + '45.3 16 ' + ah2 + '45.3 32 ' + ah1 + '48 33 '
+                }
+                pathString += 'L 48 48 ';
+
+                if (piece[2] && piece[2].startsWith('K')) {
+                    pathString += 'L 33 48 ' + ak1 + '30.3 53.7 ' + ak2 + '17.7 53.7 ' + ak1 + '15 48 '
+                }
+                if (piece[2] && piece[2].startsWith('H')) {
+                    pathString += 'L 33 48 ' + ah1 + '32 45.3 ' + ah2 + '16 45.3 ' + ah1 + '15 48 '
+                }
+                pathString += 'L 0 48 ';
+
+                if (piece[3] && piece[3].startsWith('K')) {
+                    pathString += 'L 0 33 ' + ak1 + '-5.7 30.3 ' + ak2 + '-5.7 17.7 ' + ak1 + '0 15 '
+                }
+                if (piece[3] && piece[3].startsWith('H')) {
+                    pathString += 'L 0 33 ' + ah1 + '2.7 32 ' + ah2 + '2.7 16 ' + ah1 + '0 15 '
+                }
+                pathString += 'Z';
+
+                const transX = iX * 50 + 41;
+                const transY = iY * 50 + 41;
+
+                const path = createSvgElement('path', {
+                    d: pathString,
+                    transform: `translate(${transX} ${transY})`,
+                    fill: 'white',
+                    fillOpacity: 0.7,
+                });
+
+                svg.appendChild(path);
+            }
+        }
+
+        return svg;
+    }
+
+    function createSvgElement(name, attributes) {
+        const element = document.createElementNS('http://www.w3.org/2000/svg', name);
+        for (let key in attributes) {
+            const keyKebabCase = key.replace(/[A-Z]/g, upperCaseLetter => '-' + upperCaseLetter.toLowerCase());
+            element.setAttributeNS(null, keyKebabCase, attributes[key]);
+        }
+        return element
+    }
+</script>
+</html>

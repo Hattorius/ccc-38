@@ -1,0 +1,16 @@
+9
+K,H,H,K
+K,K,H,K
+K,H,K,H
+K,H,H,H
+H,H,H,K
+H,H,K,H
+H,K,K,K
+K,K,H,K
+H,H,H,H
+5
+E,K,H,E E,K,H,H E,H,H,H E,K,K,K E,E,H,H
+K,K,K,E                         K,E,K,K
+H,K,K,E                         H,E,H,H
+H,K,H,E                         K,E,H,K
+K,H,E,E K,K,E,K H,K,E,H K,H,E,H K,E,E,K
