@@ -1,4 +1,4 @@
-with open("level3_1.in") as f:
+with open("level3_5.in") as f:
     lines = f.readlines()
     
 lines = lines[1:]
@@ -41,7 +41,7 @@ for i in range(len(seen)):
             elif rightPiece[3] == "H" and piece[1] in "HE":
                 seen[i][j][1] = "K"
                 
-with open("level3_1.out", "w") as f:
+with open("level3_5.out", "w") as f:
     for line in seen:
         a = " ".join([",".join(piece) for piece in line])
         f.write(a + "\n")
