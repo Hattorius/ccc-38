@@ -1,5 +1,5 @@
 # #school
-One of the more fun contests lol. Placed #16 last year so I had to do better. This year I placed #3. 3rd place of the students participated all over the world.
+One of the more fun contests lol. Placed #16 last year so I had to do better. This year I placed 20th. 20th place of the students participated all over the world (735 students).
 
 ## Level 1
 What can I say, level 1 was just generally very easy. You just had to count distinct lines and how many times it occured.
