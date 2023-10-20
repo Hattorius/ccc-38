@@ -13,7 +13,8 @@ Telegram: Hattorius<br>
 Line: +31681413874<br>
 Whatsapp: +31681413874<br>
 Primary phone number: +31681413874 (please don't call me on here right now, it costs a lot of money to accept phone calls in Japan)<br>
-Secondary phone number: +817091344816 (Japanese phone number)
+Secondary phone number: +817091344816 (Japanese phone number)<br>
+Linkedin: https://www.linkedin.com/in/weeb/
 
 If you want to get to know more about me, check out my website: https://xlogic.sh/
 
