@@ -1,5 +1,5 @@
 import time
-fileLevel = "3"
+fileLevel = "5"
 
 with open(f"level5_{fileLevel}.in") as f:
     lines = [line.strip() for line in f.readlines()]
@@ -54,6 +54,8 @@ def exists(a, b):
         return False
 
 def showBoard(board, currentY, currentX, targetY, targetX):
+    return
+    print("")
     time.sleep(0.1)
     for y in range(len(board)):
         newX = []
@@ -137,9 +139,12 @@ for spot in spots:
     spot = [int(a) for a in spot.split(",")]
     fullIsland = findFullIsland(spot[0], spot[1])
     beginningSpot = findBeginningSpot(fullIsland)
-    currentSpot = [beginningSpot[0], beginningSpot[1]]
     POI = findIslandSpotsToGo(fullIsland)
-    POI.append(beginningSpot)
+    # POI.append(beginningSpot)
+    
+    currentSpot = [POI[0][0], POI[0][1]]
+    POI.append(POI[0])
+    POI = POI[1:]
     
     fullPath = f"{currentSpot[0]},{currentSpot[1]} "
     for poi in POI:
