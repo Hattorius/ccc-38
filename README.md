@@ -19,3 +19,5 @@ If you want to get to know more about me, check out my website: https://xlogic.s
 
 ### Jobs
 Yes please! I'm currently looking for an internship starting the first week of February and ideally ending in June but can extend till Agusut (all 2024). Contact details are above!
+
+I'll be back in the Netherlands & willing to move
