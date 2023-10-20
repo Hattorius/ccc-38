@@ -1,5 +1,3 @@
-import matplotlib.pyplot as plt
-
 fileLevel = "5"
 
 with open(f"level3_{fileLevel}.in") as f:
